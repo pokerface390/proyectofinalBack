@@ -18,6 +18,9 @@ COPY . .
 # Copia Composer desde imagen oficial
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+COPY .env.example .env
+
+
 # Instala dependencias Laravel
 RUN composer install --no-dev --optimize-autoloader
 
